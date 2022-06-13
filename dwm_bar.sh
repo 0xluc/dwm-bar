@@ -65,6 +65,7 @@ do
     lowerbar=""
     lowerbar="$lowerbar$(dwm_date)"
     lowerbar="$lowerbar$(dwm_currency)"
+    lowerbar="$lowerbar$(dwm_currency2)"
     lowerbar="$lowerbar$(dwm_tasks)"
     #xsetroot -name "$upperbar"
     

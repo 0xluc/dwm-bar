@@ -9,22 +9,22 @@
 
 # Change the value of CURRENCY to match your currency code
 dwm_currency() {
-	CURRENCY=HEX
+	CURRENCY=BUSD
 
 	printf "%s" "$SEP1"
 	if [ "$IDENTIFIER" = "unicode" ]; then
-		printf "%s" "$(curl -s rate.sx/1$CURRENCY)"
+		printf "%.5s" "$(curl -s brl.rate.sx/1$CURRENCY)"
 	else
-		printf "%s %.5s" "$CURRENCY" "$(curl -s rate.sx/1$CURRENCY)"
+		printf "%s %.5s" "$CURRENCY" "$(curl -s brl.rate.sx/1$CURRENCY)"
 	fi
 	printf "%s\n" "$SEP2"
 }
 dwm_currency2() {
-	CURRENCY=ACA
+	CURRENCY=BNB
 
 	printf "%s" "$SEP1"
 	if [ "$IDENTIFIER" = "unicode" ]; then
-		printf "%s" "$(curl -s rate.sx/1$CURRENCY)"
+		printf "%.5s" "$(curl -s rate.sx/1$CURRENCY)"
 	else
 		printf "%s %.5s" "$CURRENCY" "$(curl -s rate.sx/1$CURRENCY)"
 	fi
