@@ -69,6 +69,6 @@ do
     #xsetroot -name "$upperbar"
     
     # Uncomment the line below to enable the lowerbar 
-    xsetroot -name "$upperbar$lowerbar"
+    xsetroot -name "^c#FFFFFF^$upperbar$lowerbar"
     sleep 1
 done
