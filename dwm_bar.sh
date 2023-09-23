@@ -28,7 +28,7 @@ export SEP2="]"
 #. "$DIR/bar-functions/dwm_cmus.sh"
 #. "$DIR/bar-functions/dwm_mpc.sh"
 #. "$DIR/bar-functions/dwm_spotify.sh"
-#. "$DIR/bar-functions/dwm_resources.sh"
+. "$DIR/bar-functions/dwm_resources.sh"
 . "$DIR/bar-functions/dwm_battery.sh"
 #. "$DIR/bar-functions/dwm_mail.sh"
 . "$DIR/bar-functions/dwm_backlight.sh"
@@ -43,8 +43,9 @@ export SEP2="]"
 #. "$DIR/bar-functions/dwm_connman.sh"
 #. "$DIR/bar-functions/dwm_loadavg.sh"
 . "$DIR/bar-functions/dwm_currency.sh"
-#. "$DIR/bar-functions/dwm_tasks.sh"
+. "$DIR/bar-functions/dwm_tasks.sh"
 . "$DIR/bar-functions/dwm_datesdiff.sh"
+. "$DIR/bar-functions/dwm_xmr.sh"
 parallelize() {
     while true
     do
@@ -63,13 +64,14 @@ do
     upperbar=""
     # Append results of each func one by one to the lowerbar string
     lowerbar=""
+    lowerbar="$lowerbar$(dwm_xmr)"
     lowerbar="$lowerbar$(dwm_backlight)"
     lowerbar="$lowerbar$(dwm_networkmanager)"
     lowerbar="$lowerbar$(dwm_battery)"
     lowerbar="$lowerbar$(dwm_date)"
-    lowerbar="$lowerbar$(dwm_currency)"
-    lowerbar="$lowerbar$(dwm_currency2)"
-#    lowerbar="$lowerbar$(dwm_tasks)"
+    lowerbar="$lowerbar$(dwm_currency3)"
+    lowerbar="$lowerbar$(dwm_resources)"
+    #lowerbar="$lowerbar$(dwm_tasks)"
     #xsetroot -name "$upperbar"
     
     # Uncomment the line below to enable the lowerbar 

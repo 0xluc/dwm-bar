@@ -30,6 +30,17 @@ dwm_currency2() {
 	fi
 	printf "%s\n" "$SEP2"
 }
+dwm_currency3() {
+	CURRENCY=XMR
 
-dwm_currency
+	printf "%s" "$SEP1"
+	if [ "$IDENTIFIER" = "unicode" ]; then
+		printf "%.5s" "$(curl -s rate.sx/1$CURRENCY)"
+	else
+		printf "%s %.5s" "$CURRENCY" "$(curl -s rate.sx/1$CURRENCY)"
+	fi
+	printf "%s\n" "$SEP2"
+}
+
+dwm_currency3
 dwm_currency2
